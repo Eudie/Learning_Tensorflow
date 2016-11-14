@@ -1,0 +1,38 @@
+# Author: Eudie
+# This is guide to install Tensorflow GPU version on Ubuntu16.04
+
+------------------------
+Dual boot with ubuntu
+------------------------
+If your laptop has inbuilt Nvidia GPU, then you might face problem booting(ASUS:GL552VW)
+In that user has to go to edit from installation window
+Then add " nouveau.modeset=0 acpi_osi=! acpi_backlight=native idle=nomwait" in the line starts with "linux"(take care of wrap text). 
+
+[
+The Nouveau command disables the NVidia card, which you need to do until you get proper drivers installed.
+
+The ACPI commands make your keyboard hotkeys work properly
+
+The idle command is needed to make the new Skylake chipset speed up and down properly without locking up.
+]
+
+Press F10
+After succesful installation upgrade
+Open "Software Updater"
+Go to "Addition Update"
+Select "Nvidia driver"
+Click "Apply Changes"
+
+------------------------
+Installing tensorflow
+------------------------
+Install "cuda" as suggested by tensorflow website from .deb
+Install "cudnn" as suggested by tensorflow website
+Install "tensorflow gpu" as suggested by tensorflow website using pip
+Add Cuda environment variables
+{
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export CUDA_HOME=/usr/local/cuda
+}
+
+
