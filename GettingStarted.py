@@ -3,7 +3,6 @@
 import tensorflow as tf
 import time
 
-
 with tf.device('/cpu:0'):
     x1 = tf.Variable(tf.random_normal([11111, 11111]))
     x2 = tf.Variable(tf.random_normal([11111, 11111]))

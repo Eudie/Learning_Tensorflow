@@ -7,6 +7,7 @@ import math
 import os
 import random
 import zipfile
+from nltk.tokenize import word_tokenize
 
 import numpy as np
 from six.moves import urllib
